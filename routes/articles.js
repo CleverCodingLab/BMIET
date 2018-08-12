@@ -13,6 +13,19 @@ router.get('/add', ensureAuthenticated, function(req, res){
   });
 });
 
+//show route
+router.get('/show', ensureAuthenticated, function(req, res){
+    Article.find({}, function(err, articles){
+        if(err){
+            console.log(err);
+        } else {
+            res.render('Show', {
+                articles: articles
+            });
+        }
+    });
+});
+
 // Add Submit POST Route
 router.post('/add', function(req, res){
   req.checkBody('title','Title is required').notEmpty();
@@ -112,6 +125,8 @@ router.get('/:id', function(req, res){
     });
   });
 });
+
+
 
 // Access Control
 function ensureAuthenticated(req, res, next){
