@@ -1,8 +1,8 @@
 extends layout
 
 block content
-    h1 WELCOME TO B.M.I.E.T
+    h3 LIST OF ALL STUDENTS
          ul.list-group
-           each article, i in articles
+           each student, i in articles
              li.list-group-item
-               a(href="/articles/"+article._id)= article.title
+               a(href="/articles/"+student._id)= student.name

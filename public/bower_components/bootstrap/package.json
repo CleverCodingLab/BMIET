@@ -12,7 +12,7 @@
     "web"
   ],
   "homepage": "http://getbootstrap.com",
-  "author": "Twitter, Inc.",
+  "admin": "Twitter, Inc.",
   "scripts": {
     "change-version": "node grunt/change-version.js",
     "update-shrinkwrap": "npm shrinkwrap --dev && shx mv ./npm-shrinkwrap.json ./grunt/npm-shrinkwrap.json",

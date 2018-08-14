@@ -25,7 +25,7 @@ db.on('error', function(err){
 const app = express();
 
 // Bring in Models
-let Article = require('./models/article');
+let Student = require('./models/student');
 
 // Load View Engine
 app.set('views', path.join(__dirname, 'views'));
@@ -85,7 +85,7 @@ app.get('*', function(req, res, next){
 
 // Home Route
 app.get('/', function(req, res){
-  Article.find({}, function(err, articles){
+  Student.find({}, function(err, articles){
     if(err){
       console.log(err);
     } else {

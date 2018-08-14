@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  label Name:
+  p= student.name
+  label Branch:
+  p= student.branch
+  label Roll No:
+  p= student.rollno
+  label Father's Name:
+  p= student.fname
+
+  hr
+  if user
+    if user.id ==student.admin
+      a.btn.btn-default(href='/articles/edit/'+student._id) Edit
+      a.btn.btn-danger.delete-article(href='#', data-id=student._id) Delete
+

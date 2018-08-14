@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  h1 #{title}
+  form(method='POST', action='/articles/add')
+    #form-group
+      label Name:
+      input.form-control(name='name', type='text')
+    #form-group
+      label Branch:
+      input.form-control(name='branch', type='text')
+    #form-group
+      label Roll No:
+      input.form-control(name='rollno', type='text')
+    #form-group
+      label Father's Name:
+      input.form-control(name='fname', type='text')
+    br
+    input.btn.btn-primary(type='submit', value='Submit')
+
+
+
