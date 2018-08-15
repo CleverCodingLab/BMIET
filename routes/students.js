@@ -20,7 +20,7 @@ router.get('/show', ensureAuthenticated, function(req, res){
             console.log(err);
         } else {
             res.render('Show', {
-                articles: articles
+                students: articles
             });
         }
     });

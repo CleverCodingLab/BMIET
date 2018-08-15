@@ -3,6 +3,6 @@ extends layout
 block content
     h3 LIST OF ALL STUDENTS
          ul.list-group
-           each student, i in articles
+           each student, i in students
              li.list-group-item
-               a(href="/articles/"+student._id)= student.name
+               a(href="/students/"+student._id)= student.name

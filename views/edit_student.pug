@@ -2,21 +2,18 @@ extends layout
 
 block content
   h1 #{title}
-  form(method='POST', action='/articles/edit/'+student._id)
+  form(method='POST', action='/students/edit/'+student._id)
     #form-group
       label Name:
       input.form-control(name='name', type='text', value=student.name)
-    //#form-group
-    //  label Author:
-    //  input.form-control(name='author', type='text', value=article.author)
     #form-group
       label Branch:
-      input.form-control(name='branch', type='text' ,value=student.branch)
+      input.form-control(name='branch', type='text' , value=student.branch)
     #form-group
       label Roll No:
-      input.form-control(name='rollno', type='text' ,value=student.rollno)
+      input.form-control(name='rollno', type='text' , value=student.rollno)
     #form-group
       label Father's Name:
-      input.form-control(name='fname', type='text' ,value=student.fname)
+      input.form-control(name='fname', type='text' , value=student.fname)
     br
-    input.btn.btn-primary(type='submit',value='Submit')
+    input.btn.btn-primary(type='submit', value='Submit')
