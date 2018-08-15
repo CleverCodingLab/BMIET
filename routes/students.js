@@ -15,12 +15,12 @@ router.get('/add', ensureAuthenticated, function(req, res){
 
 //show route
 router.get('/show', ensureAuthenticated, function(req, res){
-    Student.find({}, function(err, articles){
+    Student.find({}, function(err, students){
         if(err){
             console.log(err);
         } else {
             res.render('Show', {
-                students: articles
+                students: students
             });
         }
     });
