@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  label Name:
+  p= faculty.name
+  label Department:
+  p= faculty.department
+  label Salary:
+  p= faculty.salary
+  label City:
+  p= faculty.city
+
+  hr
+  if user
+    if user.id ==faculty.admin
+       a.btn.btn-default(href='/faculties/edit/'+faculty._id) Edit
+       a.btn.btn-danger.delete-article(href='#', data-id=faculty._id) Delete

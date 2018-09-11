@@ -85,12 +85,12 @@ app.get('*', function(req, res, next){
 
 // Home Route
 app.get('/', function(req, res){
-  Student.find({}, function(err, students){
+  Student.find({}, function(err, articles){
     if(err){
       console.log(err);
     } else {
       res.render('index', {
-        students: students
+        articles: articles
       });
     }
   });
@@ -99,8 +99,10 @@ app.get('/', function(req, res){
 // Route Files
 let students = require('./routes/students');
 let users = require('./routes/users');
+let faculties = require('./routes/faculties');
 app.use('/students', students);
 app.use('/users', users);
+app.use('/faculties', faculties);
 
 // Start Server
 app.listen(3000, function(){

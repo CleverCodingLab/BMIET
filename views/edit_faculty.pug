@@ -1,0 +1,19 @@
+extends layout
+
+block content
+    h1 #{title}
+    form(method='POST', action='/faculties/edit/'+faculty._id)
+        #form-group
+            label Name:
+            input.form-control(name='name', type='text', value=faculty.name)
+        #form-group
+            label Department:
+            input.form-control(name='department', type='text' , value=faculty.department)
+        #form-group
+            label Salary:
+            input.form-control(name='salary', type='text' , value=faculty.salary)
+        #form-group
+            label City:
+            input.form-control(name='city', type='text' , value=faculty.city)
+        br
+        input.btn.btn-primary(type='submit', value='Submit')

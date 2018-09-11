@@ -1,0 +1,8 @@
+extends layout
+
+block content
+    h3 LIST OF ALL FACULTIES MEMBERS
+        ul.list-group
+            each faculty, i in faculties
+                li.list-group-item
+                    a(href="/faculties/"+faculty._id)= faculty.name

@@ -42,14 +42,14 @@ router.post('/add', function(req, res){
       errors:errors
     });
   } else {
-    let article = new Student();
-    article.name = req.body.name;
-    article.admin = req.user._id;
-    article.branch = req.body.branch;
-    article.rollno = req.body.rollno;
-    article.fname = req.body.fname;
+    let student = new Student();
+    student.name = req.body.name;
+    student.admin = req.user._id;
+    student.branch = req.body.branch;
+    student.rollno = req.body.rollno;
+    student.fname = req.body.fname;
 
-    article.save(function(err){
+    student.save(function(err){
       if(err){
         console.log(err);
         return;
@@ -77,15 +77,15 @@ router.get('/edit/:id', ensureAuthenticated, function(req, res){
 
 // Update Submit POST Route
 router.post('/edit/:id', function(req, res){
-  let article = {};
-  article.name = req.body.name;
-  article.branch = req.body.branch;
-  article.rollno = req.body.rollno;
-  article.fname = req.body.fname;
+  let student = {};
+  student.name = req.body.name;
+  student.branch = req.body.branch;
+  student.rollno = req.body.rollno;
+  student.fname = req.body.fname;
 
   let query = {_id:req.params.id}
 
-  Student.update(query, article, function(err){
+  Student.update(query, student, function(err){
     if(err){
       console.log(err);
       return;

@@ -6,6 +6,11 @@ const passport = require('passport');
 // Bring in User Model
 let User = require('../models/user');
 
+// about us
+router.get('/about_us', function(req, res){
+    res.render('about_us');
+});
+
 // Register Form
 router.get('/register', function(req, res){
   res.render('register');
